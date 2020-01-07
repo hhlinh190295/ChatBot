@@ -19,6 +19,8 @@ class Hello(Resource):
     # corresponds to the GET request.
     # this function is called whenever there
     # Corresponds to POST request
+    def get(self):
+        return jsonify({'status':'OK','answer':'haha'})
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('text', type=str)
@@ -50,13 +52,8 @@ class Hello(Resource):
             # return jsonify({'data': text})
 
 
-class GetTest(Resource):
-        def get(self):
-            return jsonify({'status':'OK','answer': 'haha'}
-
 # adding the defined resources along with their corresponding urls
 api.add_resource(Hello, '/ask/')
-api.add_resource(GetTest, '/ask/')
 
 
 # driver function
