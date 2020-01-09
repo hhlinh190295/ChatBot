@@ -20,7 +20,7 @@ class Hello(Resource):
     # this function is called whenever there
     # Corresponds to POST request
     def get(self):
-        return render_template('index.html')
+        return app.render_template('index.html')
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('text', type=str)
