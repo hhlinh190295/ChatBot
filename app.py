@@ -20,7 +20,7 @@ class Hello(Resource):
     # this function is called whenever there
     # Corresponds to POST request
     def get(self):
-        return app.render_template('index.html')
+        return jsonify({'status':'OK','answer':'haha cmm'})
     def post(self):
         parser = reqparse.RequestParser()
         parser.add_argument('text', type=str)
